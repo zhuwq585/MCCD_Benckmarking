@@ -124,6 +124,9 @@ if __name__ == "__main__":
     ProblemIdList = CONFIG_OBJ['problemId']
     LanguageList = CONFIG_OBJ['language']
     
+    if not os.path.exists("./benchmarkResult/"):
+        os.mkdir("./benchmarkResult/")
+    
     if len(sys.argv) <= 1:
         print("Evaluating all imported tools.")
         targetTools = list(CONFIG_OBJ['tools'].keys())

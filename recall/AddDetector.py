@@ -7,6 +7,9 @@ LanguageList = ["Java","Python","C","C++"]
 def folderCreation(newToolName) -> bool:
     try:
         # recall/ToolResult/[toolName]/[language]/
+        if not os.path.exists("./ToolResult/"):
+            os.mkdir("./ToolResult/")
+        
         toolResult = "./ToolResult/" + newToolName + "/"
         os.mkdir(toolResult)
         for language in LanguageList:
